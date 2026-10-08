@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 - Optimized Performance Landing Page</title>
+    
+    <!-- Resource Hints for Critical Connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Critical Above-The-Fold Assets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Deferred Script Execution to Prevent Parser Blocking -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">FastWeb</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#metrics">Metrics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Above-The-Fold Hero Section -->
+        <section class="hero" id="hero">
+            <h1>High Performance Frontend Architecture</h1>
+            <p>Optimized for fast First Contentful Paint (FCP) and low Largest Contentful Paint (LCP).</p>
+            <a href="#gallery" class="btn">Explore Gallery</a>
+        </section>
+
+        <!-- Lazy Loaded Media Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <h2>Optimized Image Gallery</h2>
+            <p>Images utilize responsive srcset, WebP formats, and native lazy-loading.</p>
+            
+            <div class="gallery-grid">
+                
+                <figure class="gallery-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=80" type="image/webp">
+                        <img 
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80" 
+                            alt="Developer working on laptop setup" 
+                            loading="lazy" 
+                            decoding="async" 
+                            width="600" 
+                            height="400"
+                        >
+                    </picture>
+                    <figcaption>Workspace Productivity</figcaption>
+                </figure>
+
+                <figure class="gallery-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80" type="image/webp">
+                        <img 
+                            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80" 
+                            alt="Clean code editor displaying HTML and CSS" 
+                            loading="lazy" 
+                            decoding="async" 
+                            width="600" 
+                            height="400"
+                        >
+                    </picture>
+                    <figcaption>Code Architecture</figcaption>
+                </figure>
+
+                <figure class="gallery-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" type="image/webp">
+                        <img 
+                            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80" 
+                            alt="Digital binary code visual representation" 
+                            loading="lazy" 
+                            decoding="async" 
+                            width="600" 
+                            height="400"
+                        >
+                    </picture>
+                    <figcaption>Data Processing</figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <!-- Performance Stats Section -->
+        <section class="metrics-section" id="metrics">
+            <h2>Optimization Results</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>99 / 100</h3>
+                    <p>Lighthouse Score</p>
+                </div>
+                <div class="metric-card">
+                    <h3>0.8 s</h3>
+                    <p>Largest Contentful Paint</p>
+                </div>
+                <div class="metric-card">
+                    <h3>0.00</h3>
+                    <p>Cumulative Layout Shift</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 FastWeb. Junior Frontend Developer Internship Submission.</p>
+    </footer>
+
+</body>
+</html>

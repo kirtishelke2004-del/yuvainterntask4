@@ -1,0 +1,150 @@
+/* Performant Reset with CSS System Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    color: #1e293b;
+    background-color: #f8fafc;
+    /* Smooth rendering without layout shifts */
+    text-rendering: optimizeSpeed;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f172a;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #38bdf8;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Above-The-Fold Section Optimization */
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 1.5rem;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* CSS Containment for Below-the-Fold Optimization */
+.gallery-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    /* Boost rendering speed by deferring off-screen painting */
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Prevent Cumulative Layout Shift (CLS) with fixed aspect ratios */
+.gallery-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card figcaption {
+    padding: 0.75rem;
+    font-weight: 600;
+}
+
+.metrics-section {
+    background-color: #ffffff;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 1px solid #e2e8f0;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 300px;
+}
+
+.metrics-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.metric-card {
+    border: 2px solid #38bdf8;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    min-width: 180px;
+}
+
+.metric-card h3 {
+    font-size: 2rem;
+    color: #0284c7;
+}
+
+.footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.5rem;
+}
